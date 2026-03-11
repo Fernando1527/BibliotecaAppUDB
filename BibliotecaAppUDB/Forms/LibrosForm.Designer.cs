@@ -38,10 +38,10 @@
             button2 = new Button();
             button3 = new Button();
             dgvLibros = new DataGridView();
-            colId = new DataGridViewTextBoxColumn();
-            colTitulo = new DataGridViewTextBoxColumn();
-            colAutor = new DataGridViewTextBoxColumn();
-            colAnio = new DataGridViewTextBoxColumn();
+            Id = new DataGridViewTextBoxColumn();
+            Titulo = new DataGridViewTextBoxColumn();
+            Autor = new DataGridViewTextBoxColumn();
+            Anio = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvLibros).BeginInit();
             SuspendLayout();
             // 
@@ -125,42 +125,47 @@
             // 
             dgvLibros.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvLibros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvLibros.Columns.AddRange(new DataGridViewColumn[] { colId, colTitulo, colAutor, colAnio });
+            dgvLibros.Columns.AddRange(new DataGridViewColumn[] { Id, Titulo, Autor, Anio });
             dgvLibros.Location = new Point(152, 252);
             dgvLibros.Name = "dgvLibros";
             dgvLibros.RowHeadersWidth = 51;
             dgvLibros.Size = new Size(505, 188);
             dgvLibros.TabIndex = 9;
+            dgvLibros.CellClick += dgvLibros_CellClick;
             // 
-            // colId
+            // Id
             // 
-            colId.HeaderText = "ID";
-            colId.MinimumWidth = 6;
-            colId.Name = "colId";
+            Id.DataPropertyName = "Id";
+            Id.HeaderText = "ID";
+            Id.MinimumWidth = 6;
+            Id.Name = "Id";
             // 
-            // colTitulo
+            // Titulo
             // 
-            colTitulo.HeaderText = "Titulo";
-            colTitulo.MinimumWidth = 6;
-            colTitulo.Name = "colTitulo";
+            Titulo.DataPropertyName = "Titulo";
+            Titulo.HeaderText = "Titulo";
+            Titulo.MinimumWidth = 6;
+            Titulo.Name = "Titulo";
             // 
-            // colAutor
+            // Autor
             // 
-            colAutor.HeaderText = "Autor";
-            colAutor.MinimumWidth = 6;
-            colAutor.Name = "colAutor";
+            Autor.DataPropertyName = "Autor";
+            Autor.HeaderText = "Autor";
+            Autor.MinimumWidth = 6;
+            Autor.Name = "Autor";
             // 
-            // colAnio
+            // Anio
             // 
-            colAnio.HeaderText = "Año";
-            colAnio.MinimumWidth = 6;
-            colAnio.Name = "colAnio";
+            Anio.DataPropertyName = "Anio";
+            Anio.HeaderText = "Año";
+            Anio.MinimumWidth = 6;
+            Anio.Name = "Anio";
             // 
             // LibrosForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(999, 473);
             Controls.Add(dgvLibros);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -178,6 +183,10 @@
             ResumeLayout(false);
             PerformLayout();
         }
+        private void LibrosForm_Load(object sender, EventArgs e)
+        {
+
+        }
 
         #endregion
 
@@ -191,9 +200,9 @@
         private Button button2;
         private Button button3;
         private DataGridView dgvLibros;
-        private DataGridViewTextBoxColumn colId;
-        private DataGridViewTextBoxColumn colTitulo;
-        private DataGridViewTextBoxColumn colAutor;
-        private DataGridViewTextBoxColumn colAnio;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn Titulo;
+        private DataGridViewTextBoxColumn Autor;
+        private DataGridViewTextBoxColumn Anio;
     }
 }

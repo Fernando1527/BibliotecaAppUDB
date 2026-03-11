@@ -1,47 +1,58 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using BibliotecaAppUDB.Models;
+using BibliotecaAppUDB.Servicios;
 
 namespace BibliotecaAppUDB.Forms
 {
     public partial class LibrosForm : Form
     {
-        List<Libro> listaLibros = new List<Libro>();
-        int idActual = 1;
+        BibliotecaService biblioteca = new BibliotecaService();
+
+        int idSeleccionado = 0;
 
         public LibrosForm()
         {
             InitializeComponent();
+            dgvLibros.AutoGenerateColumns = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             string titulo = txtTitulo.Text;
             string autor = txtAutor.Text;
-            int anio = int.Parse(txtAnio.Text);
 
-            Libro nuevoLibro = new Libro()
+            int anio;
+
+            if (!int.TryParse(txtAnio.Text, out anio))
             {
-                Id = idActual,
-                Titulo = titulo,
-                Autor = autor,
-                Anio = anio
-            };
+                MessageBox.Show("Ingrese un año válido");
+                return;
+            }
 
-            listaLibros.Add(nuevoLibro);
+            biblioteca.AgregarLibro(titulo, autor, anio);
 
-            dgvLibros.Rows.Add(nuevoLibro.Id, nuevoLibro.Titulo, nuevoLibro.Autor, nuevoLibro.Anio);
+            MessageBox.Show("Libro agregado");
 
-            idActual++;
+            dgvLibros.DataSource = null;
+            dgvLibros.DataSource = biblioteca.Libros;
 
             txtTitulo.Clear();
             txtAutor.Clear();
             txtAnio.Clear();
+        }
+
+        private void dgvLibros_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                idSeleccionado = int.Parse(dgvLibros.Rows[e.RowIndex].Cells["Id"].Value.ToString());
+
+                txtTitulo.Text = dgvLibros.Rows[e.RowIndex].Cells["Titulo"].Value.ToString();
+                txtAutor.Text = dgvLibros.Rows[e.RowIndex].Cells["Autor"].Value.ToString();
+                txtAnio.Text = dgvLibros.Rows[e.RowIndex].Cells["Anio"].Value.ToString();
+            }
         }
     }
 }
