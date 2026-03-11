@@ -42,6 +42,7 @@
             btnLibros.TabIndex = 0;
             btnLibros.Text = "Gestionar Libros";
             btnLibros.UseVisualStyleBackColor = true;
+            btnLibros.Click += btnLibros_Click;
             // 
             // btnUsuarios
             // 
@@ -51,6 +52,7 @@
             btnUsuarios.TabIndex = 1;
             btnUsuarios.Text = "Gestionar Usuarios";
             btnUsuarios.UseVisualStyleBackColor = true;
+            btnUsuarios.Click += btnUsuarios_Click;
             // 
             // btnPrestamos
             // 
@@ -60,6 +62,7 @@
             btnPrestamos.TabIndex = 2;
             btnPrestamos.Text = "Prestamos";
             btnPrestamos.UseVisualStyleBackColor = true;
+            btnPrestamos.Click += btnPrestamos_Click;
             // 
             // btnEstadisticas
             // 
