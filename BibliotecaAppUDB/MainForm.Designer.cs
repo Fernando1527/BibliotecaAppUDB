@@ -72,6 +72,7 @@
             btnEstadisticas.TabIndex = 3;
             btnEstadisticas.Text = "Estadisticas";
             btnEstadisticas.UseVisualStyleBackColor = true;
+            btnEstadisticas.Click += btnEstadisticas_Click;
             // 
             // MainForm
             // 

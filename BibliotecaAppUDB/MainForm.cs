@@ -32,5 +32,10 @@ namespace BibliotecaAppUDB
             PrestamosForm prestamos = new PrestamosForm(biblioteca);
             prestamos.ShowDialog();
         }
+        private void btnEstadisticas_Click(object sender, EventArgs e)
+        {
+            EstadisticasForm estadisticas = new EstadisticasForm(biblioteca);
+            estadisticas.ShowDialog();
+        }
     }
 }
