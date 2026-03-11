@@ -13,6 +13,8 @@ namespace BibliotecaAppUDB.Forms
         {
             InitializeComponent();
             biblioteca = servicio;
+            dgvPrestamos.AutoGenerateColumns = true;
+
         }
         private void label1_Click(object sender, EventArgs e)
         {
@@ -57,5 +59,6 @@ namespace BibliotecaAppUDB.Forms
             dgvPrestamos.DataSource = null;
             dgvPrestamos.DataSource = biblioteca.Prestamos;
         }
+
     }
 }

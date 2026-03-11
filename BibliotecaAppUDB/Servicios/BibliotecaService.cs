@@ -76,13 +76,17 @@ namespace BibliotecaAppUDB.Servicios
             if (libro != null && usuario != null && libro.Disponible)
             {
                 Prestamo prestamo = new Prestamo(
-    Prestamos.Count + 1,
-    libro,
-    usuario
-);
+                    Prestamos.Count + 1,
+                    libro,
+                    usuario
+                );
 
                 prestamo.FechaPrestamo = DateTime.Now;
                 prestamo.Devuelto = false;
+
+                libro.Disponible = false;
+
+                Prestamos.Add(prestamo); // ESTA LÍNEA FALTABA
             }
         }
         public void RegistrarDevolucion(int idPrestamo)

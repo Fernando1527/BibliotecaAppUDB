@@ -110,6 +110,7 @@
             // 
             // Id
             // 
+            Id.DataPropertyName = "Id";
             Id.HeaderText = "ID";
             Id.MinimumWidth = 6;
             Id.Name = "Id";
@@ -117,6 +118,7 @@
             // 
             // Usuario
             // 
+            Usuario.DataPropertyName = "Usuario";
             Usuario.HeaderText = "Usuario";
             Usuario.MinimumWidth = 6;
             Usuario.Name = "Usuario";
@@ -124,6 +126,7 @@
             // 
             // Libro
             // 
+            Libro.DataPropertyName = "Libro";
             Libro.HeaderText = "Libro";
             Libro.MinimumWidth = 6;
             Libro.Name = "Libro";
@@ -131,6 +134,7 @@
             // 
             // FechaPrestamo
             // 
+            FechaPrestamo.DataPropertyName = "FechaPrestamo";
             FechaPrestamo.HeaderText = "Fecha";
             FechaPrestamo.MinimumWidth = 6;
             FechaPrestamo.Name = "FechaPrestamo";
@@ -138,6 +142,7 @@
             // 
             // Devuelto
             // 
+            Devuelto.DataPropertyName = "Devuelto";
             Devuelto.HeaderText = "Devuelto";
             Devuelto.MinimumWidth = 6;
             Devuelto.Name = "Devuelto";

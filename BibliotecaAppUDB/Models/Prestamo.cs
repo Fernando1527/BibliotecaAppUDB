@@ -15,6 +15,11 @@ namespace BibliotecaAppUDB.Models
         public DateTime FechaDevolucion { get; set; }
         public bool Devuelto { get; set; }
 
+        public string NombreUsuario => Usuario?.Nombre;
+
+        public string NombreLibro => Libro?.Titulo;
+    
+
         public Prestamo(int id, Libro libro, Usuario usuario)
         {
             Id = id;
